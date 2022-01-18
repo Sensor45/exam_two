@@ -15,6 +15,8 @@ class Manager(Employee):
     def payroll_calculation(self):
         return self.salary
 
+
+
 class Secretary(Employee):
 
     def __init__(self, name, pin, salary, work_hour):
@@ -70,18 +72,19 @@ def all_payroll_calculation():
     print(f' Общий фонд заработной платы составил {manager.payroll_calculation()+secretary.payroll_calculation()+seller.payroll_calculation()+workshop_worker1.payroll_calculation()+workshop_worker2.payroll_calculation()+rep_secretary.payroll_calculation()} сом')
 
 def all_performance_evaluation():
-    dic = [{'emp': 'Барсбек Канаткулов', 'work': 18 },
-           {'emp': 'Алымкул Тилекбаев', 'work': 38},
-           {'emp': 'Айпери Шалымбекова', 'work': 38},
-           {'emp': 'Бакыт Рустамов', 'work': 25},
-           {'emp': 'Алтынай Ширинбаева', 'work': 40},
-           {'emp': 'Жанар Рыскулов','work': 33}]
+    dic = [{'emp': 'Барсбек Канаткулов', 'work': 18*100/40 },
+           {'emp': 'Алымкул Тилекбаев', 'work': 38*100/40},
+           {'emp': 'Айпери Шалымбекова', 'work': 38*100/40},
+           {'emp': 'Бакыт Рустамов', 'work': 25*100/40},
+           {'emp': 'Алтынай Ширинбаева', 'work': 40*100/40},
+           {'emp': 'Жанар Рыскулов','work': 33*100/40}]
 
     newlist = sorted(dic, key=lambda k: k['work'])
     for i in newlist:
-        if i['work'] < 40:
+
+        if i['work'] < 100:
             print(i['emp']+f' не очень продуктивный сотрудник')
-        elif i['work'] == 40:
+        elif i['work'] == 100:
             print(i['emp'] + f' продуктивный сотрудник')
         else:
             print(i['emp'] + f' очень продуктивный сотрудник')
